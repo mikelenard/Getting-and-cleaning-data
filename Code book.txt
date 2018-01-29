@@ -1,0 +1,16 @@
+Variable name	Variable type	Derived from:	Notes:
+URL	function	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip	Location of dataset
+testx	data.frame	X_test.txt	
+trainx	data.frame	X_train.txt	
+testy	data.frame	Y_test.txt	
+trainy	data.frame	Y_train.txt	
+activity	data.frame	activity_labels.txt	Used as a lookup to create column activityName
+header	data.frame	features.txt	Used to reference column headers
+name1	list	header	Converts column headers
+testym	data.frame	"testy, activity"	Merge is used as a lookup for activityName
+trainym	data.frame	"trainy, activity"	Merge is used as a lookup for activityName
+testm	data.frame	"testym, testx"	Merge of two datasets
+trainm	data.frame	"trainym, trainx"	Merge of two datasets
+merge1	data.frame	"testm, trainm"	Merge of two datasets
+merge1ex	data.frame	merge1	Extract of data containing 'std' or 'mean in column header
+merge1mean	numeric	merge1ex	Average of values
